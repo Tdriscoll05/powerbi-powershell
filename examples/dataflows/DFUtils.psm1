@@ -115,11 +115,11 @@ function LoginPowerBi([String]$Environment)
 	DFLogMessage("Logging in to PowerBI")
 	if ($Environment -ne "" -and $Environment -ne $null)
     {
-        Connect-PowerBIServiceAccount -Environment $Environment
+        Connect-PowerBIServiceAccount -Credential $credential
     }
     else 
     {
-        Login-PowerBI
+        Connect-PowerBIServiceAccount -Credential $credential
     }
 }
 
